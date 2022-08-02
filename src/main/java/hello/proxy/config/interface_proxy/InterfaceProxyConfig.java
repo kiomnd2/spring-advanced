@@ -14,8 +14,6 @@ public class InterfaceProxyConfig {
         return new OrderControllerInterfaceProxy(controllerImpl, logTrace); // 가짜 프록시를 빈으로 등록
     }
 
-
-
     @Bean
     public OrderServiceV1 orderService(LogTrace logTrace) {
         OrderServiceV1Impl serviceImpl = new OrderServiceV1Impl(orderRepository(logTrace));
