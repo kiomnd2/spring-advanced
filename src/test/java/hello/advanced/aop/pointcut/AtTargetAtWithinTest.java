@@ -1,11 +1,10 @@
 package hello.advanced.aop.pointcut;
 
-import hello.aop.member.annotation.ClassApp;
+import hello.advanced.aop.member.annotation.ClassApp;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
@@ -48,13 +47,13 @@ public class AtTargetAtWithinTest {
     @Aspect
     static class  AtTargetAtWithinAspect {
 
-        @Around("execution(* hello.aop..*(..)) && @target(hello.aop.member.annotation.ClassApp)")
+        @Around("execution(* hello.advanced.aop..*(..)) && @target(hello.advanced.aop.member.annotation.ClassApp)")
         public Object atTarget(ProceedingJoinPoint joinPoint) throws Throwable {
             log.info("[@target] {}", joinPoint.getSignature());
             return joinPoint.proceed();
         }
 
-        @Around("execution(* hello.aop..*(..)) && @within(hello.aop.member.annotation.ClassApp)")
+        @Around("execution(* hello.advanced.aop..*(..)) && @within(hello.advanced.aop.member.annotation.ClassApp)")
         public Object atWithin(ProceedingJoinPoint joinPoint) throws Throwable {
             log.info("[@within] {}", joinPoint.getSignature());
             return joinPoint.proceed();

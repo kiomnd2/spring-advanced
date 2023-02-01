@@ -1,7 +1,7 @@
 package hello.advanced.aop.pointcut;
 
 
-import hello.aop.member.MemberServiceImpl;
+import hello.advanced.aop.member.MemberServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.aop.aspectj.AspectJExpressionPointcut;
